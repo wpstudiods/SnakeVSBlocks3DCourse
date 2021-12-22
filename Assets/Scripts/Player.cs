@@ -38,4 +38,10 @@ public class Player : MonoBehaviour
         GameState.OnPlayerDied();
         player.velocity = Vector3.zero;
     }
+
+    public void ReachFinish()
+    {
+        GameState.OnPlayerReachFinish();
+        player.velocity = Vector3.zero; 
+    }
 }

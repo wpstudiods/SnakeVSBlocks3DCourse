@@ -15,6 +15,9 @@ public class GameState : MonoBehaviour
 
     public State CurrentState { get; private set; }
 
+    public GameObject CompleteLvl;
+    public GameObject DeadLvl;
+    
     public void OnPlayerDied()
     {
         if (CurrentState != State.Playing) return;
@@ -22,9 +25,20 @@ public class GameState : MonoBehaviour
         CurrentState = State.Loss;
         Player.enabled = false;
         Debug.Log("You Loss!");
-        ReloadLevel();
+        DeadLvl.SetActive(true);
+
     }
 
+    public void OnPlayerReachFinish()
+    {
+       if (CurrentState != State.Playing) return;
+
+       CurrentState = State.Won;
+       Player.enabled = false;
+       Debug.Log("You Won!");
+       CompleteLvl.SetActive(true);
+    }
+    
     private void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
