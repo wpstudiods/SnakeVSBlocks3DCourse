@@ -12,6 +12,7 @@ public class SnakeMovement : MonoBehaviour
     public float CollisionInterval = 0.2f;
     public Text hitpointText;
     public Player Player;
+    public Food Food;
     public int Hitpoints { get; private set; }
 
     private List<Transform> snakeCircles = new List<Transform>();
@@ -51,11 +52,13 @@ public class SnakeMovement : MonoBehaviour
 
     public void AddCircle()
     {
+        Food.Play();
         Hitpoints++;
         hitpointText.text = Hitpoints.ToString();
         Transform circle = Instantiate(SnakeP, positions[positions.Count - 1], Quaternion.identity, transform);
         snakeCircles.Add(circle);
         positions.Add(circle.position);
+        
     }
 
     public void RemoveCircle()
@@ -84,6 +87,7 @@ public class SnakeMovement : MonoBehaviour
             for (int i = 0; i < food.Amount; i++)
             {
                 AddCircle();
+                
             }
             
             Destroy(other.gameObject);

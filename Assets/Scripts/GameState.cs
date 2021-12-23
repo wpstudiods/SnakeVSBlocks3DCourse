@@ -39,8 +39,4 @@ public class GameState : MonoBehaviour
        CompleteLvl.SetActive(true);
     }
     
-    private void ReloadLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }

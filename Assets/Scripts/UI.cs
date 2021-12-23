@@ -8,6 +8,12 @@ public class UI : MonoBehaviour
     {
         SceneManager.LoadScene("Level_Select");
     }
+    
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     public void QuitGame()
     {
