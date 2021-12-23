@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 5731815338932462652}
   - component: {fileID: 8250504361647151607}
   - component: {fileID: 6633186775802952772}
-  - component: {fileID: 9194089648923915814}
+  - component: {fileID: 699177407750710534}
   m_Layer: 0
   m_Name: Food
   m_TagString: Untagged
@@ -214,10 +214,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountText: {fileID: 3231806647246715678}
-  AudioSource: {fileID: 9194089648923915814}
+  AudioClip: {fileID: 8300000, guid: 75421864faa8c46958b438fd7527a7b7, type: 3}
   minAmount: 1
   maxAmount: 6
---- !u!82 &9194089648923915814
+--- !u!82 &699177407750710534
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,7 +228,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 75421864faa8c46958b438fd7527a7b7, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

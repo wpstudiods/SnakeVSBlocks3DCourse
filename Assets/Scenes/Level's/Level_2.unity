@@ -5204,6 +5204,7 @@ MonoBehaviour:
   CollisionInterval: 1
   hitpointText: {fileID: 1358737209}
   Player: {fileID: 1067343920}
+  Food: {fileID: 0}
 --- !u!1001 &1089973225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8762,7 +8763,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 24.878576
+  m_FocalLength: 33.886955
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -8771,7 +8772,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 51.5
+  field of view: 39
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

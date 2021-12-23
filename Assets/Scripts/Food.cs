@@ -6,10 +6,9 @@ using UnityEngine.UI;
 public class Food : MonoBehaviour
 {
     public Text amountText;
-
+    public AudioClip AudioClip;
 
     public int Amount { get; private set; }
-    public AudioSource AudioSource; 
     [SerializeField]
     private int minAmount = 1;
     [SerializeField]
@@ -19,10 +18,13 @@ public class Food : MonoBehaviour
     {
         Amount = Random.Range(minAmount, maxAmount);
         amountText.text = Amount.ToString();
+        
     }
-    public void Play()
+    private void OnColliderEnter(Collider other) 
     {
         var audio = GetComponent<AudioSource>();
-        audio.Play();
+        audio.PlayOneShot(AudioClip);    
     }
+    
+    
 }

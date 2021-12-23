@@ -52,13 +52,11 @@ public class SnakeMovement : MonoBehaviour
 
     public void AddCircle()
     {
-        Food.Play();
         Hitpoints++;
         hitpointText.text = Hitpoints.ToString();
         Transform circle = Instantiate(SnakeP, positions[positions.Count - 1], Quaternion.identity, transform);
         snakeCircles.Add(circle);
         positions.Add(circle.position);
-        
     }
 
     public void RemoveCircle()
@@ -82,10 +80,13 @@ public class SnakeMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        
+
         if (other.gameObject.TryGetComponent(out Food food))
         {
             for (int i = 0; i < food.Amount; i++)
             {
+                 
                 AddCircle();
                 
             }
@@ -96,6 +97,7 @@ public class SnakeMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
+        
         if (collisionTimer <= 0 && other.gameObject.TryGetComponent(out Block block))
         {
             block.ApplyDamage();
